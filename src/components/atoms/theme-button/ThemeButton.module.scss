@@ -1,0 +1,18 @@
+.theme-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  gap: 3vw;
+  font-family: 'Space Mono', monospace;
+  font-size: 1em;
+  border-radius: 15px;
+  padding: 1vh 2vw;
+  transition: ease-in 0.2s;
+  color: white;
+}
+
+.theme-button:hover {
+  border: 1px solid #0079fe;
+}
