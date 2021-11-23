@@ -25,10 +25,18 @@
   }
   .profile-info {
     grid-area: profile-info;
+    display: grid;
+    grid-template-areas: 'username join-date';
     .username {
+      grid-area: username;
       display: flex;
       flex-direction: column;
-      gap: 1vh;
+      gap: 2vh;
+    }
+    .join-date {
+      display: flex;
+      justify-content: flex-end;
+      grid-area: join-date;
     }
   }
   .profile-bio {
@@ -48,17 +56,65 @@
 
 @media only screen and (max-width: 1000px) {
   .grid {
+    column-gap: 5vw;
     grid-template-areas:
       'profile-picture profile-info'
       'profile-bio profile-bio'
       'profile-card profile-card'
       'profile-link profile-link' !important;
+    .profile-picture {
+      align-items: center;
+      justify-content: center;
+    }
+    .profile-info {
+      grid-template-areas:
+        'username'
+        'join-date' !important;
+      .join-date {
+        justify-content: flex-start;
+      }
+    }
   }
 }
 
-.flex-between {
-  display: flex;
-  justify-content: space-between;
+@media only screen and (max-width: 600px) {
+  .grid {
+    grid-template-areas:
+      'profile-picture profile-info'
+      'profile-bio profile-bio'
+      'profile-card profile-card'
+      'profile-link profile-link' !important;
+    .profile-picture {
+      img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+    .profile-bio {
+      margin-top: 3vh;
+    }
+    .profile-info {
+      gap: 1vh;
+      .username {
+        grid-area: username;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+      }
+    }
+    .profile-link {
+      grid-template-columns: 1fr;
+      row-gap: 3vh;
+    }
+  }
+  .flex-column {
+    text-align: center;
+    p:nth-child(1) {
+      font-size: 0.8em;
+    }
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .text-important {

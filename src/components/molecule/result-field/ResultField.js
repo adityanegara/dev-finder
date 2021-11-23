@@ -19,7 +19,6 @@ const ResultField = () =>{
                   <img alt='profile-image' src={profileImage}/>
               </div>
               <div className={styles['profile-info']}>
-                <div className={styles['flex-between']}>
                     <div className={styles['username']}>
                         <p className={styles['text-important']}>
                             The Octocat
@@ -31,11 +30,10 @@ const ResultField = () =>{
                     <div className={styles['join-date']}>
                         <p>Joined 25 Jan 2011</p>
                     </div>
-                </div>
               </div>
               <div className={styles['profile-bio']}>
-                 <p className={styles['text-secondary']}>
-                     This profile has no bio
+                 <p>
+                     Lorem ipsum dolor sit amet, conscetetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
                  </p>
               </div>
               <div className={styles['profile-card']}>
