@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0062fbe5.chunk.css",
+    "main.js": "/static/js/main.d84bff69.chunk.js",
+    "main.js.map": "/static/js/main.d84bff69.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.00fdbdeb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.00fdbdeb.js.map",
+    "static/js/2.755f202b.chunk.js": "/static/js/2.755f202b.chunk.js",
+    "static/js/2.755f202b.chunk.js.map": "/static/js/2.755f202b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.0062fbe5.chunk.css.map": "/static/css/main.0062fbe5.chunk.css.map",
+    "static/js/2.755f202b.chunk.js.LICENSE.txt": "/static/js/2.755f202b.chunk.js.LICENSE.txt",
+    "static/media/icon-moon.cce754ce.svg": "/static/media/icon-moon.cce754ce.svg",
+    "static/media/icon-search.0cc0c984.svg": "/static/media/icon-search.0cc0c984.svg",
+    "static/media/link-gray.1303ad89.png": "/static/media/link-gray.1303ad89.png",
+    "static/media/link-white.ad70c34f.png": "/static/media/link-white.ad70c34f.png",
+    "static/media/map-gray.83f07aae.png": "/static/media/map-gray.83f07aae.png",
+    "static/media/map-white.fde29cac.png": "/static/media/map-white.fde29cac.png",
+    "static/media/octocat.41d3e4d3.png": "/static/media/octocat.41d3e4d3.png",
+    "static/media/twitter-gray.21c2b871.png": "/static/media/twitter-gray.21c2b871.png",
+    "static/media/twitter-white.cc4a74fc.png": "/static/media/twitter-white.cc4a74fc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.00fdbdeb.js",
+    "static/js/2.755f202b.chunk.js",
+    "static/css/main.0062fbe5.chunk.css",
+    "static/js/main.d84bff69.chunk.js"
+  ]
+}
