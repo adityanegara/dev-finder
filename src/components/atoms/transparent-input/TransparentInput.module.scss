@@ -24,3 +24,12 @@
     }
   }
 }
+
+.gray {
+  input {
+    color: #6c757d !important;
+  }
+  input::placeholder {
+    color: #6c757d;
+  }
+}

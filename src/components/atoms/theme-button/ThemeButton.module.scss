@@ -11,8 +11,12 @@
   padding: 1vh 2vw;
   transition: ease-in 0.2s;
   color: white;
+  transition: ease-in 0.2s;
 }
 
+.white-theme {
+  color: #4b6a9b !important;
+}
 .theme-button:hover {
   border: 1px solid #0079fe;
 }

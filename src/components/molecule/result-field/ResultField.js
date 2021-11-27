@@ -1,4 +1,5 @@
 import styles from './ResultField.module.scss';
+import { useContext} from 'react';
 import Card from '../../atoms/card/Card';
 import profileImage from '../../../assets/images/octocat.png'
 import CardSecondary from '../../atoms/card-secondary/CardSecondary';
@@ -10,8 +11,24 @@ import whiteLinkIcon from '../../../assets/icons/link-white.png';
 import grayLinkIcon from '../../../assets/icons/link-gray.png';
 import whiteBuilding from '../../../assets/icons/building-white.png';
 import grayBuilding from '../../../assets/icons/building-gray.png';
+import { ThemeContext } from '../../organism/dev-finder/DevFinder';
 
 const ResultField = () =>{
+    const darkTheme = useContext(ThemeContext);
+    const renderLocationIcon = () =>{
+        return darkTheme ?  whiteLocationIcon : grayLocationIcon;
+    }
+    const renderTwitterIcon = () =>{
+        return darkTheme ?  whiteTwitterIcon : grayTwitterIcon;
+    }
+
+    const renderLinkIcon = () =>{
+        return darkTheme ?  whiteLinkIcon : grayLinkIcon;
+    }
+ 
+    const renderBuildingIcon = () =>{
+        return darkTheme ?  whiteBuilding : grayBuilding;
+    }
     return(
         <Card>
           <div className={styles['grid']}>
@@ -68,19 +85,19 @@ const ResultField = () =>{
               </div>
               <div className={styles['profile-link']}>
                   <div className={styles['link-icon']}>
-                      <img alt='location-icon' src={whiteLocationIcon}/>
+                      <img alt='location-icon' src={renderLocationIcon()}/>
                       <p>San Francisco</p>
                   </div>
                   <div className={styles['link-icon']}>
-                      <img alt='link-icon' src={whiteLinkIcon}/>
+                      <img alt='link-icon' src={renderLinkIcon()}/>
                       <p>https://github.blog</p>
                   </div>
                   <div className={styles['link-icon']}>
-                      <img alt='twitter-icon' src={grayTwitterIcon}/>
+                      <img alt='twitter-icon' src={renderTwitterIcon()}/>
                       <p className={styles['text-secondary']}>Not available</p>
                   </div>
                   <div className={styles['link-icon']}>
-                      <img alt='building-icon' src={whiteBuilding}/>
+                      <img alt='building-icon' src={renderBuildingIcon()}/>
                       <p>agithub</p>
                   </div>
               </div>

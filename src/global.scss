@@ -3,15 +3,17 @@
 html,
 body {
   color: white;
-  background-color: #141d2f;
+
   overflow-x: hidden;
   font-family: 'Space Mono', monospace;
 }
 
 body {
+  background-color: #141d2f;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: ease-in 0.2s;
 }
 
 p {
@@ -31,4 +33,9 @@ input {
 a {
   min-width: 44px;
   min-height: 44px;
+}
+
+.white-theme {
+  background-color: #fefefe !important;
+  color: black !important;
 }
