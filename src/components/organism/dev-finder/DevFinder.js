@@ -3,11 +3,18 @@ import styles from './DevFinder.module.scss';
 import Header from '../../molecule/header/Header';
 import InputField from '../../molecule/input-field/InputField';
 import ResultField from '../../molecule/result-field/ResultField';
+import {searchUser} from '../../../api/user';
 
 export const ThemeContext = React.createContext();
 
 const DevFinder = () =>{
     const [darkTheme, setDarkTheme] = useState(true);
+    const [user, setUser] = useState();
+
+    const handleSearchUser  =  async (keyword) =>{
+        const response = await searchUser(keyword);
+        setUser(response);
+    }
     const toggleTheme = () =>{
         setDarkTheme(prevDarkTheme => !prevDarkTheme);
     }
@@ -16,7 +23,7 @@ const DevFinder = () =>{
         if(darkTheme){
             document.body.style.backgroundColor = "#141d2f";
         }else{
-            document.body.style.backgroundColor = "#F2F3F4";
+            document.body.style.backgroundColor = "#FEFBF3";
         }
     }, [darkTheme])
 
@@ -24,8 +31,8 @@ const DevFinder = () =>{
         <ThemeContext.Provider value={darkTheme}>
             <div className={`${styles['container']} ${styles['margin-top']}`}>
                 <Header toggleThemeClick = {toggleTheme}/>
-                <InputField/>
-                <ResultField/>
+                <InputField onHandleSearchUser={handleSearchUser}/>
+                <ResultField user={user}/>
             </div>
         </ThemeContext.Provider>
     )
