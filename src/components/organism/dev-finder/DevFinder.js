@@ -10,10 +10,15 @@ export const ThemeContext = React.createContext();
 const DevFinder = () =>{
     const [darkTheme, setDarkTheme] = useState(true);
     const [user, setUser] = useState();
-
+    const [noUser,setNoUser] = useState(false);
     const handleSearchUser  =  async (keyword) =>{
         const response = await searchUser(keyword);
-        setUser(response);
+        if(response.message){
+            setUser();
+            setNoUser(true);
+        }else{
+            setUser(response);
+        }
     }
     const toggleTheme = () =>{
         setDarkTheme(prevDarkTheme => !prevDarkTheme);
@@ -32,7 +37,7 @@ const DevFinder = () =>{
             <div className={`${styles['container']} ${styles['margin-top']}`}>
                 <Header toggleThemeClick = {toggleTheme}/>
                 <InputField onHandleSearchUser={handleSearchUser}/>
-                <ResultField user={user}/>
+                <ResultField noUser={noUser} user={user}/>
             </div>
         </ThemeContext.Provider>
     )

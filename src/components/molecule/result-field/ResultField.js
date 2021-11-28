@@ -15,7 +15,7 @@ import { ThemeContext } from '../../organism/dev-finder/DevFinder';
 import moment from 'moment';
 import convertIsoDate from '../../../helper/convertIsoDate';
 
-const ResultField = ({user}) =>{
+const ResultField = ({user, noUser}) =>{
     const darkTheme = useContext(ThemeContext);
     const renderLocationIcon = () =>{
         return darkTheme ?  whiteLocationIcon : grayLocationIcon;
@@ -34,6 +34,19 @@ const ResultField = ({user}) =>{
 
     const renderAccountText = () =>{
         return darkTheme ?  styles['text-blue'] : styles['text-green'];
+    }
+
+    const renderEmptyCard = () =>{
+        if(noUser){
+            return (
+                <p className={`${styles['search-user__text']} ${styles['text-red']}`}>Username not found.</p>
+            )
+        }else{
+            return (
+                <p className={`${styles['search-user__text']}`}>Please search a user.</p>
+            )
+        }
+       
     }
 
     const renderText = (bio, noText) =>{
@@ -130,7 +143,7 @@ const ResultField = ({user}) =>{
         }else{
             return(
                 <Card>
-                    <p>Please search user.</p>
+                   {renderEmptyCard()}
                 </Card>
             )
         }
