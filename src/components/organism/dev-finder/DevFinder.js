@@ -39,6 +39,9 @@ const DevFinder = () =>{
                 <InputField onHandleSearchUser={handleSearchUser}/>
                 <ResultField noUser={noUser} user={user}/>
             </div>
+            <a href="tel://+6281289503000">Testing Call</a>
+            <br></br>
+            <a href="sms://+6281289503000?body=I%27m%20interested%20in%20your%20product.%20Please%20contact%20me.">Testing SMS</a>
         </ThemeContext.Provider>
     )
 }
